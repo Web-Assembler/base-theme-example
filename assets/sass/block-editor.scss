@@ -1,0 +1,100 @@
+// The base styles and variables
+@import "base/variables";
+@import "base/mixins";
+// @import "base/utilities";
+// @import "blocks/standard/button-link";
+// @import "base/headings";
+// @import "elements/buttons";
+// @import "blocks/headline-cta";
+
+
+// // Editor specific overrides
+// @import "blocks/admin/acf-block-preview";
+
+// // Blocks - Gutenberg blocks layouts
+// @import "blocks/hero";
+
+
+
+
+// Remove padding from has-background. WEBATODO
+.editor-styles-wrapper {
+	// padding-left: 20px !important;
+	// padding-right: 20px !important;
+	h1.has-background,
+	h2.has-background,
+	h3.has-background,
+	h4.has-background,
+	h5.has-background,
+	h6.has-background {
+		padding: 0 !important;
+	}
+
+	// Fix acf inheriting the theme.json font weight (300)
+	.acf-input input,
+	.acf-button,
+	.acf-block-fields,
+	.acf-icon,
+	input {
+		font-weight: 400;
+	}
+
+	// Remove the border at the bottom of buttons and ACF UI.
+	a.acf-icon {
+		text-decoration: none;
+	}
+
+	a:where(:not(.wp-element-button):not(.acf-icon)) {
+		color: #000000 !important;
+	}
+
+	.block-editor-block-list__layout.is-root-container > .acf-block-component,
+	.block-editor-block-list__layout.is-root-container > .wp-block {
+		margin-bottom: weba-spacing(2);
+	}
+
+	// Remove the max container on blocks.
+	.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+		
+	}
+
+	.block-editor-block-list__block.acf-block-preview.has-background {
+		// Remove the container so the background colour can be seen.
+		max-width: none !important;
+
+		// Add block padding inside - how it's shown on front end.
+		@include block-padding-top;
+		@include block-padding-bottom;
+
+		// Just in editor, remove the block margin below, as the editors
+		// have a margin bottom value (see above)
+		> .webassembler-block {
+			margin-bottom: 0;
+		}
+	}
+
+	
+}
+
+
+
+// WEBATODO - These are needed.
+$colors: (
+	'weba-textdomain-blue-dark' : var(--wp--preset--color--weba-base-blue-dark),
+	'weba-textdomain-blue-bright' : var(--wp--preset--color--weba-base-blue-bright),
+	'weba-textdomain-blue-light': var(--wp--preset--color--weba-base-blue-light),
+	'weba-textdomain-blue-extra-light': var(--wp--preset--color--weba-base-blue-extra-light)
+);
+
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+		&:hover,
+		&:focus {
+			color: $color;
+		}
+	}
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}

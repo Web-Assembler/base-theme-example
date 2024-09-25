@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="40">
+	<g fill="none" fill-rule="evenodd"><path fill="#FFF" stroke="#2E354F" stroke-width="2" d="M1 1h88v38H1z"/>
+		<text fill="#2E354F" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="20" font-weight="bold">
+			<tspan x="12" y="27">ALOGO</tspan>
+		</text>
+	</g>
+</svg>

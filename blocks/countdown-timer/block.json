@@ -1,0 +1,34 @@
+{
+	"apiVersion": 2,
+	"name": "webassembler/countdown-timer",
+	"title": "Countdown Timer",
+	"description": "Displays a time that counts down to zero.",
+	"category": "webassembler",
+	"icon": "clock",
+	"keywords": [
+		"clock",
+		"timer",
+		"countdown"
+	],
+	"viewStyle": [ "file:./dist/main.min.css", "countdown-timer-style" ],
+	"viewScript": [ "file:./dist/main.min.js", "countdown-timer-script" ],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block.php",
+		"postTypes": [ "page", "post" ]
+	},
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"alignContent": false,
+		"mode": false,
+		"color": {
+			"text": false,
+			"background": false,
+			"link": false
+		},
+		"jsx": true,
+		"alignText": false,
+		"fullHeight": false
+	}
+}

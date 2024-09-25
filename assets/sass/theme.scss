@@ -1,0 +1,46 @@
+@import "base/root-variables";
+@import "base/variables";
+@import "base/mixins";
+@import "base/utilities";
+@import "base/htmlelements";
+@import "base/headings";
+
+// The page layouts
+@import "layouts/header-mobile";
+@import "layouts/header-desktop";
+@import "layouts/entry-content";
+@import "layouts/footer";
+@import "layouts/error404";
+@import "layouts/page-password";
+@import "layouts/tmpl-contact-us";
+
+// The Components
+@import "components/site-branding"; // Parts of the site that appear 
+@import "components/blocks"; // set default behaviour for blocks
+@import "components/page-header";
+@import "components/buttons";
+@import "components/shortcodes";
+@import "components/forms";
+@import "components/lists";
+@import "components/social-icons";
+@import "components/breadcrumbs";
+
+// Standard Gutenberg blocks
+@import "blocks/standard/oembed";
+@import "blocks/standard/image";
+@import "blocks/standard/button-link";
+@import "blocks/standard/general";
+
+// Custom Gutenberg blocks
+@import "blocks/full-height-header";
+
+// Vendor styling (third-party)
+// @import "vendor/cookie-law-info";
+// @import "vendor/pojo-a11y-toolbar";
+// @import "vendor/forminator-forms";
+// @import "vendor/the-events-calendar";
+
+.webassembler-block:not(.block-hero):not(.block-image-slider).has-background {
+	@include block-padding-top;
+	@include block-padding-bottom;
+}

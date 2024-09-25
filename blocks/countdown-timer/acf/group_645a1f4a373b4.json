@@ -1,0 +1,43 @@
+{
+    "key": "group_645a1f4a373b4",
+    "title": "Block: Countdown Timer",
+    "fields": [
+        {
+            "key": "field_6526f57c2129d",
+            "label": "Countdown Timer",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Settings for this countdown timer can be found in Website Options. If the countdown timer is not needed on this page, please delete this block.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "webassembler\/countdown-timer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1721144450
+}

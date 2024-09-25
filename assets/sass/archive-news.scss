@@ -1,0 +1,86 @@
+// Styles here just for archives.
+@import '../sass/base/variables';
+@import '../sass/base/mixins';
+@import "../sass/common/card";
+@import '../sass/common/card-news';
+@import "../sass/common/pagination";
+
+:root {
+	--posts-container-gap: 32px;
+}
+
+
+ul.posts-container {
+	@include block-margins-bottom;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	.post-item {
+		margin-bottom: weba-spacing(0.5);
+	}
+	@include md-up {
+		.post-item {
+			margin-bottom: 0;
+			flex: 0 0 calc(100% - var(--posts-container-gap));
+		}
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--posts-container-gap);
+		&.posts-container--two-columns .post-item,
+		&.posts-container--three-columns .post-item {
+			flex: 0 0 calc(50% - var(--posts-container-gap) / 2);
+		}
+	}
+	@include lg-up {
+		&.posts-container--three-columns .post-item {
+			flex: 0 0 calc(33.333% - var(--posts-container-gap) / 1.5);
+		}
+	}
+}
+
+.posts-filters {
+	@include block-margins-bottom();
+	.posts__filters__heading {
+		margin-bottom: rem(30px);
+	}
+	.wp-block-buttons:where(.is-layout-flex) {
+		gap: 10px;
+	}
+
+	.filter-buttons {
+		display: flex;
+		.wp-block-button {
+			margin-right: weba-spacing(0.5);
+			.filter-button {
+				&.current {
+					background: black;
+				}
+			}
+		}
+		
+	}
+}
+
+// Featured post
+.blog-posts__wrapper--featured {
+	max-width: $width--container !important;
+	margin-bottom: rem(20px);
+	.card--featured-post {
+		margin-bottom: rem(50px);
+	}
+	@include lg-up {
+		display: flex;
+		justify-content: space-between;
+		.card--featured-post {
+			width: 66%;
+			margin-bottom: 0;
+			.card__link {
+				margin-top: 0;
+			}
+		}
+		.card--newsletter {
+			width: 33%;
+			max-width: 32%;
+		}
+	}
+}
